@@ -19,9 +19,9 @@ export default function App() {
             <FlightDetails />
           </div>
         </main>
-        <footer className="bg-blue-800 text-white py-4 mt-12">
+        <footer className="bg-black text-white py-4 mt-12">
           <div className="container mx-auto px-4 text-center">
-            <p>&copy; 2023 JETEX. Tous droits réservés.</p>
+            <p>&copy; 2025 JETEX.By Soufiane Oulahcen</p>
           </div>
         </footer>
       </div>

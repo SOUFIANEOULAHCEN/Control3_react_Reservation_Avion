@@ -40,7 +40,7 @@ export default function FlightDetails() {
     <div className="border-l p-8 bg-gray-50">
       <div id="printable-content" ref={printRef} className="bg-white p-6 rounded-lg shadow-md">
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-blue-600">JETEX</h1>
+          <h1 className="text-3xl font-bold text-red-600">JETEX</h1>
           <p className="text-sm text-gray-600">Jetex Private Jet Experience</p>
         </div>
         
@@ -62,7 +62,7 @@ export default function FlightDetails() {
                 </span>
                 <button
                   onClick={() => dispatch(addService({ ...service, flightId: selectedFlight.id }))}
-                  className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600 transition duration-300"
+                  className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition duration-300"
                 >
                   Ajouter
                 </button>
@@ -95,7 +95,7 @@ export default function FlightDetails() {
 
       <button
         onClick={handlePrint}
-        className="mt-6 w-full bg-yellow-400 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-300 text-gray-800 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50 print:hidden"
+        className="mt-6 w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 print:hidden"
       >
         Effectuer la Réservation
       </button>

@@ -1,9 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
+// export const fetchFlights = createAsyncThunk(
+//   'flights/fetchFlights',
+//   async (dateRange) => {
+//     const response = await fetch('https://gahi-said.com/apis/vols.php')
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok')
+//     }
+//     const data = await response.json()
+//     return data
+//   }
+// )
+
 export const fetchFlights = createAsyncThunk(
   'flights/fetchFlights',
   async (dateRange) => {
-    const response = await fetch('https://gahi-said.com/apis/vols.php')
+    const params = new URLSearchParams({
+      startDate: dateRange?.start || '',
+      endDate: dateRange?.end || ''
+    });
+    const response = await fetch(`https://gahi-said.com/apis/vols.php?${params}`);
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
