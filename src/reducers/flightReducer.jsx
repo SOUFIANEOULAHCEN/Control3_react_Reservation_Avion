@@ -12,6 +12,22 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 //   }
 // )
 
+// export const fetchFlights = createAsyncThunk(
+//   'flights/fetchFlights',
+//   async (dateRange) => {
+//     const params = new URLSearchParams({
+//       startDate: dateRange?.start || '',
+//       endDate: dateRange?.end || ''
+//     });
+//     const response = await fetch(`https://gahi-said.com/apis/vols.php?${params}`);
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok')
+//     }
+//     const data = await response.json()
+//     return data
+//   }
+// )
+
 export const fetchFlights = createAsyncThunk(
   'flights/fetchFlights',
   async (dateRange) => {
@@ -21,12 +37,13 @@ export const fetchFlights = createAsyncThunk(
     });
     const response = await fetch(`https://gahi-said.com/apis/vols.php?${params}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      throw new Error('Network response was not ok');
     }
-    const data = await response.json()
-    return data
+    const data = await response.json();
+    console.log(data); // Ajoutez ceci pour vérifier les données reçues
+    return data;
   }
-)
+);
 
 const flightSlice = createSlice({
   name: 'flights',
